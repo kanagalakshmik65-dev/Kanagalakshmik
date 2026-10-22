@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d28d9">
+  <title>SafeHer AI — Safety Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SafeHer AI home"><span class="brand-mark">S</span><span>SafeHer <b>AI</b></span></a>
+    <span class="demo-pill"><span class="dot"></span> DEMO PROTOTYPE</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR PERSONAL SAFETY COMPANION</p>
+        <h1>Feel safer.<br><span>Stay connected.</span></h1>
+        <p class="intro">A simple prototype for quick access to trusted contacts, safety guidance, and emergency resources.</p>
+        <div class="notice"><strong>Demo only:</strong> This app does not contact emergency services or share your location.</div>
+      </div>
+      <div class="sos-panel">
+        <div class="sos-ring"><div class="sos-inner"><span class="sos-icon">!</span><span class="sos-label">SOS</span></div></div>
+        <h2>Need help?</h2>
+        <p>Use this demo button to preview the emergency flow.</p>
+        <button id="sosButton" class="sos-button" type="button">Activate SOS Demo</button>
+        <p class="tiny">No call, message, or alert will be sent.</p>
+      </div>
+    </section>
+
+    <section class="section-heading">
+      <div><p class="eyebrow">QUICK ACCESS</p><h2>Your safety tools</h2></div>
+      <span class="muted">Designed for a quick glance</span>
+    </section>
+
+    <section class="tool-grid">
+      <article class="tool-card contact-card">
+        <div class="card-icon purple">♡</div><h3>Trusted contacts</h3>
+        <p class="card-desc">Keep the people you trust easy to find.</p>
+        <ul id="contactList" class="contact-list">
+          <li><span class="avatar">P</span><span><strong>Parent / Guardian</strong><small>Trusted contact</small></span><span class="contact-state">Saved</span></li>
+          <li><span class="avatar peach">F</span><span><strong>Friend</strong><small>Trusted contact</small></span><span class="contact-state">Saved</span></li>
+        </ul>
+        <form id="contactForm" class="contact-form">
+          <label for="contactName">Add a contact name</label>
+          <div class="inline-form"><input id="contactName" maxlength="40" placeholder="e.g. Sister" required><button type="submit" class="secondary-button">Add</button></div>
+        </form>
+        <p class="tiny">Names stay in this page session only; no phone numbers are stored.</p>
+      </article>
+
+      <article class="tool-card">
+        <div class="card-icon mint">✦</div><h3>AI safety assistant</h3>
+        <p class="card-desc">Quick, general safety guidance for common situations.</p>
+        <label class="field-label" for="situation">Choose a situation</label>
+        <select id="situation">
+          <option value="travel">Travelling alone</option>
+          <option value="stranger">Feeling uncomfortable around someone</option>
+          <option value="online">Unwanted online contact</option>
+          <option value="urgent">Immediate danger</option>
+        </select>
+        <button id="adviceButton" class="secondary-button full" type="button">Show guidance</button>
+        <div id="adviceBox" class="advice-box" aria-live="polite">Choose a situation to see practical guidance.</div>
+        <p class="tiny">This is rule-based demo guidance, not a live AI service.</p>
+      </article>
+
+      <article class="tool-card">
+        <div class="card-icon blue">⌖</div><h3>Plan a safer journey</h3>
+        <p class="card-desc">Use these reminders before starting a trip.</p>
+        <ul class="check-list">
+          <li>Prefer well-lit, public routes.</li>
+          <li>Check official transit updates.</li>
+          <li>Tell someone you trust about your plan.</li>
+          <li>Keep your phone charged if possible.</li>
+        </ul>
+        <button id="routeButton" class="secondary-button full" type="button">Show route checklist</button>
+        <p id="routeMessage" class="inline-message" aria-live="polite"></p>
+        <p class="tiny">No live maps or route-safety verification are provided.</p>
+      </article>
+    </section>
+
+    <section class="emergency-strip">
+      <div><p class="eyebrow">IF YOU NEED URGENT HELP</p><h2>Reach real-world support</h2><p>Move to a safer public place if possible and contact local emergency services or a trusted person.</p></div>
+      <div class="emergency-note"><strong>India emergency number: 112</strong><span>Verify local emergency information for your area. This app does not call 112.</span></div>
+    </section>
+    <footer><span>SafeHer AI · Hackathon prototype</span><span>Privacy-first demo · No tracking · No backend</span></footer>
+  </main>
+
+  <dialog id="sosDialog" class="sos-dialog">
+    <div class="dialog-symbol">!</div>
+    <h2>SOS demo activated</h2>
+    <p>This is only a local demonstration. <strong>No one has been contacted</strong>, and no location has been shared.</p>
+    <p>If you are in immediate danger, contact local emergency services directly when safe to do so.</p>
+    <button id="closeDialog" class="sos-button" type="button">Close demo</button>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
